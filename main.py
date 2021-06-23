@@ -4,6 +4,7 @@ import os
 from werkzeug.utils import secure_filename
 from forms import GenerateQrForm
 import qrcode
+from datetime import datetime
 
 
 # QR code generator function -------------------------------------------------------------------------------------------
@@ -13,7 +14,6 @@ def generate_qr(data="https://www.youtube.com/channel/UCFOVnO-D9CeAm3GJqP5m6qg")
     qr_generator.make(fit=True)
     image = qr_generator.make_image(fill_color="black", back_color="white")
     # generated image is a PIL object
-    # image.show()
     image_path = "static/img/qr_code.png"
     image.save(image_path)
 

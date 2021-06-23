@@ -18,21 +18,13 @@
                 {% endwith %}
 
                 {% if qr_code %}
-                <div>
+                <div class="mt-5">
                   <h2>Your QR Code:</h2>
                   <img src="{{ qr_code }}" alt="Your QR Code" />
                 </div>
                 {% endif %}
 
-                <form method="POST" action="{{ url_for('home') }}" enctype="multipart/form-data">
-                    {{ form.csrf_token }}
-                    </p>
-                    <p>
-                      <label for="data_entry">Enter text to encode</label><br />
-                      <input type="text" name="data_entry" class="form-control" />
-                    </p>
-                    {{ form.submit(class_="btn btn-primary") }}
-                </form>
+                {{ wtf.quick_form(form, novalidate=False, method="post", button_map={"submit": "primary"}) }}
               </div>
             </div>
           </div>
