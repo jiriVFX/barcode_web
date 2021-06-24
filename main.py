@@ -13,7 +13,7 @@ def generate_qr(data="https://www.youtube.com/channel/UCFOVnO-D9CeAm3GJqP5m6qg")
     qr_generator.add_data(data)
     qr_generator.make(fit=True)
     image = qr_generator.make_image(fill_color="black", back_color="white")
-    # generated image is a PIL object
+    # generated image is a PILLOW object
     current_date = datetime.now().strftime("%Y-%m-%d_%H-%M-%S")
     image_path = f"static/img/qr_codes/qr_code_{current_date}.png"
     image.save(image_path)
