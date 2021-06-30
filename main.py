@@ -1,7 +1,7 @@
 from flask import Flask, render_template, request, flash, session
 from flask_bootstrap import Bootstrap
-import os, shutil
-from werkzeug.utils import secure_filename
+import os
+import shutil
 from forms import GenerateQrForm
 import qrcode
 from datetime import datetime
